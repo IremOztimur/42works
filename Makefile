@@ -23,7 +23,8 @@ SRCS= ft_toupper.c \
 		ft_memcmp.c \
 		ft_calloc.c \
 		ft_strdup.c \
-		ft_substr.c
+		ft_substr.c \
+		ft_strtrim.c
 
 CC = gcc
 MAIN  = main.c
