@@ -6,21 +6,15 @@
 /*   By: iremoztimur <iremoztimur@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 22:01:59 by iremoztimur       #+#    #+#             */
-/*   Updated: 2022/10/27 16:10:25 by iremoztimur      ###   ########.fr       */
+/*   Updated: 2022/10/27 19:32:14 by iremoztimur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-Algorithm
-1st: Find the char that should be deleted
-2nd: move the array from right to left
-3rd: decrease the size -1
-*/
 #include "libft.h"
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-    size_t start;
+    size_t  start;
     size_t  end;
     char    *arr;
 
@@ -39,11 +33,4 @@ char *ft_strtrim(char const *s1, char const *set)
         }
     }
     return (arr);
-}
-
-int main()
-{
-	printf("%s\n", ft_strtrim("mirem oztimyrmmm", "m"));
-	printf("%s\n", ft_strtrim("xavocadoyz", "xyz"));
-	return 0;
 }
