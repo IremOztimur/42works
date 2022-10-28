@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 18:13:35 by ioztimur          #+#    #+#             */
-/*   Updated: 2022/10/22 16:29:44 by ioztimur         ###   ########.fr       */
+/*   Created: 2022/10/28 11:34:08 by ioztimur          #+#    #+#             */
+/*   Updated: 2022/10/28 11:38:43 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] != c)
+	if (!s || !f)
 	{
-		if (str[i] == '\0')
-		{
-			return (NULL);
-		}
+		ft_strdup("");
+	}
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
 		i++;
 	}
-	return ((char *)&str[i]);
 }

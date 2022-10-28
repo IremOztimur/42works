@@ -24,8 +24,10 @@ SRCS= ft_toupper.c \
 		ft_calloc.c \
 		ft_strdup.c \
 		ft_substr.c \
+		ft_strjoin.c \
+		ft_strmapi.c \
 		ft_strtrim.c \
-		ft_strmapi.c
+		ft_striteri.c
 
 CC = gcc
 MAIN  = main.c
