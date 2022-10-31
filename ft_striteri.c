@@ -6,7 +6,7 @@
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 11:34:08 by ioztimur          #+#    #+#             */
-/*   Updated: 2022/10/28 11:38:43 by ioztimur         ###   ########.fr       */
+/*   Updated: 2022/10/31 18:58:38 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	if (!s || !f)
 	{
-		ft_strdup("");
+		return ;
 	}
 	while (s[i] != '\0')
 	{
