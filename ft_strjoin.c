@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iremoztimur <iremoztimur@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 20:32:13 by ioztimur          #+#    #+#             */
-/*   Updated: 2022/10/25 21:01:28 by ioztimur         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:15:21 by iremoztimur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	arr[s1_len] = 0;
 	return (arr);
+}
+
+int	main()
+{
+	char const a[] = "irem";
+	char const b[] = "oztimur";
+
+	printf("%s", ft_strjoin(a,b));
 }
