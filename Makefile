@@ -30,7 +30,16 @@ SRCS= ft_toupper.c \
 		ft_striteri.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
-		ft_itoa.c
+		ft_itoa.c \
+		ft_split.c \
+		ft_putendl_fd.c
+
+SRC_BNS= ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c
 
 CC = gcc
 MAIN  = main.c
@@ -40,6 +49,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 RM = rm -fr
 AR = ar -rc
 OBJS = $(SRCS:.c=.o)
+OBJS_BNS = $(SRC_BNS:.c=.o)
 
 all: ${NAME}
 
@@ -54,8 +64,11 @@ run: ${NAME}
 	@${CC} ${CFLAGS} ${MAIN} ${NAME}
 	@${OUT}
 
+bonus: ${OBJS} ${OBJS_BNS}
+	@${AR} ${NAME} ${OBJS} ${OBJS_BNS}
+
 clean:
-	@${RM} ${OBJS}
+	@${RM} ${OBJS} ${OBJS_BNS}
 
 fclean: clean
 	@${RM} ${NAME}

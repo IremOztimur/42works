@@ -1,45 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 14:14:12 by ioztimur          #+#    #+#             */
-/*   Updated: 2022/11/13 20:11:43 by ioztimur         ###   ########.fr       */
+/*   Created: 2022/12/07 02:01:10 by ioztimur          #+#    #+#             */
+/*   Updated: 2022/12/07 02:21:28 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void	*ft_memmove(void *dst, const void *src, size_t len)
+t_list *ft_lstnew(void *content)
 {
-	size_t	i;
-	char *ptr_dst;
-	const char *ptr_src;
+	t_list *A;
 
-	ptr_dst = (char *)dst;
-	ptr_src = (char *)src;
-	if (!ptr_dst && !ptr_src)
+	A = NULL;
+	t_list *temp = (t_list*)malloc(sizeof(t_list));
+	if (!temp)
 	{
 		return (NULL);
 	}
-	i = 0;
-	if (ptr_src < ptr_dst)
-	{
-		while (++i <= len)
-		{
-			ptr_dst[len - i] = ptr_src[len - i];
-		}
-	}
-	else
-	{
-		while (len > 0)
-		{
-			*(ptr_dst++) = *(ptr_src++);
-			len--;
-		}
-	}
-	return(dst);
+	temp->content = (void *)content;
+	temp->next = NULL;
+	A = temp;
+	return (A);
 }

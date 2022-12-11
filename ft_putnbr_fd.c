@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iremoztimur <iremoztimur@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:36:30 by iremoztimur       #+#    #+#             */
-/*   Updated: 2022/11/01 17:55:54 by iremoztimur      ###   ########.fr       */
+/*   Updated: 2022/11/13 19:12:15 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void    ft_putnbr_fd(int n, int fd)
         {
             ft_putchar_fd('-', fd);
             n *= 1;
-        }    
+        }
         if (n > 9)
         {
             ft_putchar_fd(n / 10, fd);
@@ -41,19 +41,19 @@ void    ft_putnbr_fd(int n, int fd)
 int main()
 {
 
-   
+
     char    *arr;
     int n = 325;
-    
+
     arr = malloc(sizeof(char) * 3);
     int fd = open("irem.txt", O_RDWR | O_CREAT, 777);
     ft_putnbr_fd(n, fd);
     close(fd);
-    
+
     fd = open("irem.txt", O_RDONLY, 777);
     read(fd, arr, 3);
-    
+
     printf("%s", arr);
-    
+
 
 }
