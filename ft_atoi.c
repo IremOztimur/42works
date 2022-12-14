@@ -6,7 +6,7 @@
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:36:50 by ioztimur          #+#    #+#             */
-/*   Updated: 2022/10/17 19:05:16 by ioztimur         ###   ########.fr       */
+/*   Updated: 2022/12/14 20:51:25 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,14 @@ int	ft_atoi(const char *str)
 	if ((str[i] == 43) || (str[i] == 45))
 	{
 		if (str[i] == 45)
-		{
 			sign *= -1;
-		}
 		i++;
 	}
-	while(str[i] >= '0' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result *= 10;
 		result += str[i] - '0';
 		i++;
 	}
-	return(sign * result);
+	return (sign * result);
 }

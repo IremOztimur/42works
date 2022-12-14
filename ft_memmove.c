@@ -6,18 +6,17 @@
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 14:14:12 by ioztimur          #+#    #+#             */
-/*   Updated: 2022/11/13 20:11:43 by ioztimur         ###   ########.fr       */
+/*   Updated: 2022/12/14 19:51:15 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	char *ptr_dst;
-	const char *ptr_src;
+	size_t		i;
+	char		*ptr_dst;
+	const char	*ptr_src;
 
 	ptr_dst = (char *)dst;
 	ptr_src = (char *)src;
@@ -29,9 +28,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (ptr_src < ptr_dst)
 	{
 		while (++i <= len)
-		{
 			ptr_dst[len - i] = ptr_src[len - i];
-		}
 	}
 	else
 	{
@@ -41,5 +38,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			len--;
 		}
 	}
-	return(dst);
+	return (dst);
 }

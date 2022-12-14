@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 18:38:55 by ioztimur          #+#    #+#             */
-/*   Updated: 2022/12/14 19:54:32 by ioztimur         ###   ########.fr       */
+/*   Created: 2022/12/12 20:55:57 by ioztimur          #+#    #+#             */
+/*   Updated: 2022/12/14 20:45:07 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
+	t_list	*arr;
+	t_list	*new;
 
-	i = 0;
-	while (i < n)
+	if (!lst || !(*f) || !del)
 	{
-		if (*(unsigned char *)(s1 + i) != *(unsigned char *)(s2 + i))
-		{
-			return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
-		}
-		i++;
+		return (0);
 	}
-	return (0);
+	arr = 0;
+	while (lst)
+	{
+		new = ft_lstnew((*f)(lst->content));
+		if (!(new))
+		{
+			ft_lstclear(&arr, del);
+			return (arr);
+		}
+		ft_lstadd_back(&arr, new);
+		lst = lst->next;
+	}
+	return (arr);
 }

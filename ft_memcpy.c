@@ -6,7 +6,7 @@
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 13:23:57 by ioztimur          #+#    #+#             */
-/*   Updated: 2022/10/17 17:55:00 by ioztimur         ###   ########.fr       */
+/*   Updated: 2022/12/14 19:48:20 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	ptr = (char *)dst;
 	i = 0;
 	if (!dst && !src)
-	return (NULL);
+		return (NULL);
 	while (i < n)
 	{
 		ptr[i] = ptr2[i];

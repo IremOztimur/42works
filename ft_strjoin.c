@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iremoztimur <iremoztimur@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 20:32:13 by ioztimur          #+#    #+#             */
-/*   Updated: 2022/11/11 15:15:21 by iremoztimur      ###   ########.fr       */
+/*   Updated: 2022/12/14 20:40:00 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -20,21 +19,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s2_len;
 	char	*arr;
 
-	if(!s1 || !s2)
+	if (!s1 || !s2)
 		return (ft_strdup(""));
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	arr = (char *)malloc(sizeof(char) * ((s1_len + s2_len) + 1));
 	if (!arr)
-	{
 		return (NULL);
-	}
-	i = 0;
-	while (s1[i])
-	{
+	i = -1;
+	while (s1[++i])
 		arr[i] = s1[i];
-		i++;
-	}
 	i = 0;
 	while (s2[i])
 	{
@@ -44,12 +38,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	arr[s1_len] = 0;
 	return (arr);
-}
-
-int	main()
-{
-	char const a[] = "irem";
-	char const b[] = "oztimur";
-
-	printf("%s", ft_strjoin(a,b));
 }

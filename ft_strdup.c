@@ -15,7 +15,7 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*s2;
-	size_t sizeinbytes;
+	size_t	sizeinbytes;
 
 	sizeinbytes = ft_strlen(s1) + 1 * sizeof(char);
 	s2 = malloc(sizeinbytes);
@@ -25,7 +25,7 @@ char	*ft_strdup(const char *s1)
 	}
 	if (s1 != NULL)
 	{
-		ft_memcpy(s2, s1,sizeinbytes);
+		ft_memcpy(s2, s1, sizeinbytes);
 	}
 	return (s2);
 }

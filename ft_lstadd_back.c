@@ -6,7 +6,7 @@
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:19:11 by ioztimur          #+#    #+#             */
-/*   Updated: 2022/12/11 14:38:48 by ioztimur         ###   ########.fr       */
+/*   Updated: 2022/12/12 19:33:32 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
-		return;
+		return ;
 	if (!(*lst))
 	{
 		*lst = new;
