@@ -6,7 +6,7 @@
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:36:30 by iremoztimur       #+#    #+#             */
-/*   Updated: 2022/12/14 16:26:05 by ioztimur         ###   ########.fr       */
+/*   Updated: 2022/12/18 14:03:37 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,3 @@ void	ft_putnbr_fd(int n, int fd)
 		}
 	}
 }
-/*
-int	main(void)
-{
-    char    *arr;
-	int	n;
-	int	fd;
-
-    n = 325;
-    arr = malloc(sizeof(char) * 3);
-    fd = open("irem.txt", O_RDWR | O_CREAT, 777);
-    ft_putnbr_fd(n, fd);
-    close(fd);
-    fd = open("irem.txt", O_RDONLY, 777);
-    read(fd, arr, 3);
-    printf("%s", arr);
-}
-*/

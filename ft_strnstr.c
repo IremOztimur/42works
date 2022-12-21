@@ -6,7 +6,7 @@
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:32:58 by ioztimur          #+#    #+#             */
-/*   Updated: 2022/12/14 20:41:25 by ioztimur         ###   ########.fr       */
+/*   Updated: 2022/12/18 18:28:57 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	ptr = (char *)haystack;
-	needle_len = ft_strlen(needle);
-	if (needle_len == 0 || haystack == needle || len == 0)
+	if (!(*needle) || len == 0)
 		return (ptr);
+	needle_len = ft_strlen(needle);
 	while (ptr[i] && i < len)
 	{
 		j = 0;

@@ -6,25 +6,11 @@
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 13:35:44 by iremoztimur       #+#    #+#             */
-/*   Updated: 2022/12/14 20:51:03 by ioztimur         ###   ########.fr       */
+/*   Updated: 2022/12/18 18:51:47 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_iremcpy(char *dst, const char *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = 0;
-	return (dst);
-}
 
 char	*ft_itoa(int n)
 {
@@ -35,8 +21,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	if (n == -2147483648)
 	{
-		arr = (char *)malloc(sizeof(char) * 12);
-		return (ft_iremcpy(arr, "-2147483648"));
+		return (ft_strdup("-2147483648"));
 	}
 	else if (n < 0)
 	{

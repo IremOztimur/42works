@@ -6,13 +6,13 @@
 /*   By: ioztimur <ioztimur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:07:06 by iremoztimur       #+#    #+#             */
-/*   Updated: 2022/12/14 20:31:19 by ioztimur         ###   ########.fr       */
+/*   Updated: 2022/12/18 18:15:21 by ioztimur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	wordcounter(char const *s, char c)
+static int	wordcounter(char const *s, char c)
 {
 	unsigned int	i;
 	int				counter;
@@ -33,7 +33,7 @@ int	wordcounter(char const *s, char c)
 	return (counter);
 }
 
-char	*ft_strndup(const char *s1, size_t n)
+static char	*ft_strndup(const char *s1, size_t n)
 {
 	char	*ptr;
 	size_t	i;
@@ -66,6 +66,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	a = 0;
+	if (!s)
+		return (NULL);
 	arr = (char **)malloc(sizeof(char *) * (wordcounter(s, c) + 1));
 	if (!arr)
 		return (NULL);
@@ -77,10 +79,7 @@ char	**ft_split(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 		if (i > j)
-		{
-			arr[a] = ft_strndup(s + j, i - j);
-			a++;
-		}
+			arr[a++] = ft_strndup(s + j, i - j);
 	}
 	arr[a] = 0;
 	return (arr);
